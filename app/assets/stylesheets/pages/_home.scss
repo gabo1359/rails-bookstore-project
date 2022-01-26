@@ -1,1 +1,87 @@
 // Specific CSS for your home-page
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0px;
+    text-align: center;
+}
+.container {
+  margin: 0px;
+  padding: 0px;
+}
+.barra-superior {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), asset-url("Landingpage_img");
+    background-position:center;
+    background-size: cover;
+    height: 400px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container > h1 {
+    font-size: 50px;
+}
+.container > h2 {
+    font-size: 25px;
+}
+.container {
+    width: 800px;
+    margin: 0px auto;
+    color: #EEEBDD;
+}
+.container-cards {
+    display: flex;
+    width: 1000px;
+    margin: 0px auto;
+}
+#btn {
+    text-decoration: none;
+    background-color: #000000;
+    font-weight: lighter;
+    border-radius: 10px;
+    color:#EEEBDD ;
+    padding: 7px 15px;
+    display: inline-block;
+    margin: 15px;
+    box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.3);
+}
+#btn:hover {
+
+    background: #EEEBDD;
+    color: #000000;
+    transition: 0.3s;
+}
+.card {
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin: 50px;
+    box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.3);
+}
+.card:hover {
+    box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+}
+.card i {
+    padding-top: 10px;
+    color: #000000;
+    font-size: 30px;
+}
+.iconos-redes {
+    list-style: none;
+    display: inline-block;
+}
+.iconos-redes i {
+    font-size: 45px;
+    color: #000000;
+    padding: 0px 25px 35px 25px;
+}
+.iconos-redes i:hover {
+    color: #0000005b;
+    transition: 0.3s;
+}
+ul {
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
