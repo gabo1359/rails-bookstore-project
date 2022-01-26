@@ -7,17 +7,18 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# user = User.first
+ user = User.first
 
- # prng = Random.new
- # puts "Iniciando info de libros"
- # 10.times do
- # book = Book.create(
- # title: Faker::Book.title,
- # author: Faker::Book.author,
- # description: Faker::Books::Dune.quote,
- # released_year: prng.rand(1990..2021),
- # price: prng.rand(10..30),
- # category: Faker::Book.genre,
- # status: 0,
-  # user_id:user.id
+prng = Random.new
+ puts "Iniciando info de libros"
+ 10.times do
+book = Book.create(
+  title: Faker::Book.title,
+  author: Faker::Book.author,
+  description: Faker::Books::Dune.quote,
+  released_year: prng.rand(1990..2021),
+ price: prng.rand(10..30),
+  category: Faker::Book.genre,
+  status: 0,
+   user_id:user.id)
+ end

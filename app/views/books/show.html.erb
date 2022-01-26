@@ -1,6 +1,6 @@
-<h2><%= @restaurant.name %></h2>
-<p><%= @restaurant.address %></p>
-<p><%= @restaurant.rating %></p>
-
-<%= link_to “Reservar”, new_order_path(:book_id => @book) %>
-AQUI DEBE DE ESTAR TDO DE TITULO , CATEGORY, ETC
+<h2><%= @book.title %></h2>
+<p><%= @book.description %></p>
+<p><%= @book.price %></p>
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
+<%= link_to 'Reservar' , new_order_path(:book_id => @book) %>

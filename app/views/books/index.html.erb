@@ -1,6 +1,12 @@
+<h3>Lista Libros</h3>
 <ul>
   <% @books.each do |book| %>
-    <li><%= book.title %></li>
+    <li>
+      <%= book.title %>
+      <%= link_to 'Edit', edit_book_path(book) %>
+      <%= link_to 'Eliminar', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
   <% end %>
 
 <ul>
+<%= link_to 'New Book', new_book_path, class: 'btn btn-primary' %>
