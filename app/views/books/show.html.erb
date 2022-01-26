@@ -1,1 +1,6 @@
-asdsad
+<h2><%= @book.title %></h2>
+<p><%= @book.description %></p>
+<p><%= @book.price %></p>
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
+<%= link_to 'Reservar' , new_order_path(:book_id => @book) %>
