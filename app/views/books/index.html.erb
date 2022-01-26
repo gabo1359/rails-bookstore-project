@@ -1,19 +1,21 @@
-<h3>Lista Libros</h3>
+<div class="container">
+  <h3>Lista Libros</h3>
 
-<div class="text-right">
-  <%= link_to 'New Book', new_book_path, class: 'btn btn-primary mb-2' %>
-</div>
-<div class="auto-grid">
-  <% @books.each do |book| %>
-    <div class="card">
-      <%= image_tag "libro.jpg", alt: "foto libro", class: 'card-img-top'  %>
-      <div class="card-body">
-        <h5 class="card-title"><%= book.title %></h5>
-        <p class="card-text"><b>Autor: </b><%= book.author %></p>
-        <p class="card-text"><b>Precio: </b><%= book.price %></p>
-        <%= link_to 'Reservar', book_path(book), class: 'btn btn-primary' %>
-        <%= link_to 'Eliminar', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class="text-right">
+    <%= link_to 'New Book', new_book_path, class: 'btn btn-primary mb-2' %>
+  </div>
+  <div class="auto-grid">
+    <% @books.each do |book| %>
+      <div class="card">
+        <%= image_tag "libro.jpg", alt: "foto libro", class: 'card-img-top'  %>
+        <div class="card-body">
+          <h5 class="card-title"><%= book.title %></h5>
+          <p class="card-text"><b>Autor: </b><%= book.author %></p>
+          <p class="card-text"><b>Precio: </b><%= book.price %></p>
+          <%= link_to 'Reservar', book_path(book), class: 'btn btn-primary' %>
+          <%= link_to 'Eliminar', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
