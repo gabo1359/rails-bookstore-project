@@ -10,8 +10,8 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.user_id = current_user
-    @order.book_id = params[:book_id]
+    @order.user_id = current_user.id
+    @order.book_id = params[:order][:book_id]
     
     if @order.save
       redirect_to orders_path
@@ -23,6 +23,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:start_date, :end_date)
+    params.require(:order).permit(:start_date, :end_date, :book_id)
   end
 end

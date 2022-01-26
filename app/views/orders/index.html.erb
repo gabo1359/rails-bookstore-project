@@ -1,5 +1,7 @@
 <h1>Orders#index</h1>
 
 <% @orders.each do |order| %>
-  <div><%= order %></div>
+  <div><%= order.id %></div>
+  <div><%= order.start_date %></div>
+  <div><%= order.end_date %></div>
 <% end %>
