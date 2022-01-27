@@ -1,4 +1,24 @@
 
-<%= link_to 'Edit', edit_book_path(@book) %>
-<%= link_to 'Back', books_path %>
-<%= link_to 'Reservar' , new_order_path(:book_id => @book) %>
+<div class="btn-top">
+        <ul>
+            <li><%= link_to 'Back', books_path %></li>
+            <li><%= link_to 'Next', books_path %></li>
+        </ul>
+    </div>
+    <hr>
+    <div class="container-cuerpo">
+        <div class="container-sobre">
+            <img src="../../../../el_alquimista.jpg" alt="imagen de libro,El Alquimista">
+        </div>
+        <div class="container-info">
+            <h1>EL ALQUIMISTA</h1>
+            <h2>Autor: Paulo Coelho</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolorem, maxime sint aut quis perspiciatis impedit architecto blanditiis enim doloribus libero facilis, natus, adipisci id fugiat vitae odio quidem distinctio.</p>
+            <div class="btn-botton">
+                <ul>
+                    <li><%= link_to 'Edit', edit_book_path(@book) %></li>
+                    <li><%= link_to 'Reservar' , new_order_path(:book_id => @book) %></li>
+                </ul>
+            </div>
+        </div>
+    </div>
