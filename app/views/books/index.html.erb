@@ -15,7 +15,7 @@
         <p class="card-text"><b>Precio: </b><%= book.price %></p>
 
         <% if policy(book).show? %>
-         <%= link_to 'Reservar', orders_path(book), class: 'btn btn-primary' %>
+         <%= link_to 'Reservar', book_path(book), class: 'btn btn-primary' %>
         <% end %>
         <% if policy(book).update? %>
           <%= link_to 'Edit', edit_book_path(book) %>

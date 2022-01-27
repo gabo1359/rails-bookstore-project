@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-   @orders = policy_scope(Order).order(created_at: :desc)
+    @orders = policy_scope(Order)
   end
 
   def new
