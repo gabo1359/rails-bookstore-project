@@ -1,16 +1,16 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
 
-
   def index
     @books = policy_scope(Book).order(created_at: :desc)
   end
 
   def show
+    authorize @book
   end
 
   def new
-   @book = current_user.books.new
+    @book = current_user.books.new
     authorize @book
   end
 
@@ -46,7 +46,7 @@ class BooksController < ApplicationController
 
   private
     def set_book
-     @books = Book.find(params[:id])
+     @book = Book.find(params[:id])
 
     end
     def book_params

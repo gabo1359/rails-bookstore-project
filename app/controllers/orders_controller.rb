@@ -1,9 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    # @orders = Order.includes(:book).select('books.title as title').where('orders.user_id = ?', current_user[:id])
-    @orders = Order.where('user_id = ?', current_user)
-    @orders = policy_scope(Order).order(created_at: :desc)
+    @orders = policy_scope(Order)
   end
 
   def new
