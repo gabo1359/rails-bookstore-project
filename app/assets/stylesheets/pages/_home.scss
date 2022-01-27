@@ -9,21 +9,23 @@
     align-items: center;
     justify-content: center;
 }
-.container-home > h1 {
-    font-size: 50px;
-}
-.container-home > h2 {
-    font-size: 25px;
-}
-.container-home {
+.container-cards-home {
+  display: flex;
+  width: 1000px;
+  margin: 0px auto;
+  .container-home {
     width: 800px;
     margin: 0px auto;
-    color: #EEEBDD;
-}
-.container-cards-home {
-    display: flex;
-    width: 1000px;
-    margin: 0px auto;
+    h1{
+      color: #EEEBDD;
+    }
+    h1{
+      font-size: 50px;
+    }
+    h2{
+      font-size: 25px;
+    }
+  }
 }
 #btn {
     text-decoration: none;

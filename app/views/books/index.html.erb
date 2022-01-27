@@ -1,9 +1,11 @@
 <div class="container">
   <h3>Lista Libros</h3>
 
-<div class="text-right">
-  <%= link_to 'New Book', new_book_path, class: 'btn btn-primary mb-2' %>
-</div>
+<% if policy(Book).create? %>
+  <div class="text-right">
+    <%= link_to 'Nuevo Libro', new_book_path, class: 'btn btn-primary mb-2' %>
+  </div>
+<% end %>
 <div class="auto-grid">
   <% @books.each do |book| %>
 
@@ -19,15 +21,11 @@
         <% end %>
         <% if policy(book).update? %>
           <%= link_to 'Edit', edit_book_path(book) %>
-         <% end %>
-         <% if policy(book).destroy? %>
-        <%= link_to 'Eliminar', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        <% if policy(book).destroy? %>
+          <%= link_to 'Eliminar', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
-
-<% if policy(Book).create? %>
-  <%= link_to 'New Book', new_book_path %>
-<% end %>
