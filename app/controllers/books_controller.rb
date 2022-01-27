@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
+
   def index
-    @books = Book.all
+    @books = policy_scope(Book).order(created_at: :desc)
   end
 
   def show
@@ -13,21 +14,23 @@ class BooksController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { flat: flat })
       }
     end
+    authorize @book
   end
 
   def new
-    @book = Book.new
+    @book = current_user.books.new
+    authorize @book
   end
 
   def create
-    @book = Book.new(book_params)
-    @book.user = current_user
-    # raise
+    @book = current_user.books.new(book_params)
+    authorize @book
     if @book.save
      redirect_to book_path(@book)
     else
       render :new
     end
+
   end
 
   def edit
@@ -42,13 +45,17 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    @book.destroy
-    redirect_to books_path
+    @book = Book.find(params[:id])
+    authorize @book
+    if @book.present?
+      @book.destroy
+    end
   end
 
   private
     def set_book
-      @book = Book.find(params[:id])
+     @book = Book.find(params[:id])
+
     end
     def book_params
       params.require(:book).permit(

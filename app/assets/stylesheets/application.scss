@@ -17,4 +17,11 @@
 @import "./pages/home";
 
 //mapas
-@import "mapbox-gl/dist/mapbox-gl"
+@import "mapbox-gl/dist/mapbox-gl";
+@import './orders/new';
+@import './orders/index';
+
+.alert, .notice {
+    margin: 0px;
+    padding: 0px;
+}
