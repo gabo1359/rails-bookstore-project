@@ -3,17 +3,19 @@ class OrdersController < ApplicationController
   def index
     # @orders = Order.includes(:book).select('books.title as title').where('orders.user_id = ?', current_user[:id])
     @orders = Order.where('user_id = ?', current_user)
+    @orders = policy_scope(Order).order(created_at: :desc)
   end
-    
+
   def new
-    @order = Order.new
+    @order = current_user.orders.new
+    authorize @order
   end
 
   def create
     @order = Order.new(order_params)
     @order.user_id = current_user.id
     @order.book_id = params[:order][:book_id]
-    
+    authorize @order
     if @order.save
       redirect_to orders_path
     else
