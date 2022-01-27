@@ -2,7 +2,11 @@ class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
 
   def index
+    if params[:query].present?
+      @books = policy_scope(Book).where("title ILIKE ? OR category ILIKE ?", "%#{params[:query]}%","%#{params[:query]}%")
+    else
     @books = policy_scope(Book).order(created_at: :desc)
+    end
   end
 
   def show

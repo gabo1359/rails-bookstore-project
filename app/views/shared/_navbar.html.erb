@@ -19,9 +19,7 @@
         <li class="nav-item">
           <%= link_to 'Libros', books_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
+
       </ul>
       <!--
       <form class="form-inline my-2 my-lg-0">
@@ -29,6 +27,18 @@
         <button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button>
       </form>
       -->
+
+    <div>
+      <%= form_tag books_path,class: "d-flex", method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class:"form-control",
+        placeholder: "Harry Potter, " "Terror"
+        %>
+        <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0 mr-sm-2"%>
+      <% end %>
+    </div>
+
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
