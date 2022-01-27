@@ -2,6 +2,11 @@
 <p><%= @book.description %></p>
 <p><%= @book.price %></p>
 <%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %> 
+<%= link_to 'Back', books_path %>
 <br>
 <%= link_to 'Reservar' , new_order_path(:book_id => @book) %>
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>

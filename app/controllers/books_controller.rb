@@ -5,6 +5,14 @@ class BooksController < ApplicationController
   end
 
   def show
+    @latitude_and_longitude = User.geocoded
+    @markers = @latitude_and_longitude.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { flat: flat })
+      }
+    end
   end
 
   def new
