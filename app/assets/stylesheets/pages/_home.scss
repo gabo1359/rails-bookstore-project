@@ -8,73 +8,72 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    .container-home {
+      width: 800px;
+      margin: 0px auto;
+      h1, h2{
+        color: #EEEBDD;
+      }
+      h1{
+        font-size: 50px;
+      }
+      h2{
+        font-size: 25px;
+      }
+      a{
+          text-decoration: none;
+          background-color: #000000;
+          font-weight: lighter;
+          border-radius: 10px;
+          color:#EEEBDD ;
+          padding: 7px 15px;
+          display: inline-block;
+          margin: 15px;
+          box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.3);
+          &:hover{
+            background: #EEEBDD;
+            color: #000000;
+            transition: 0.3s;
+          }
+      }
+    }
 }
 .container-cards-home {
   display: flex;
   width: 1000px;
   margin: 0px auto;
-  .container-home {
-    width: 800px;
-    margin: 0px auto;
-    h1{
-      color: #EEEBDD;
-    }
-    h1{
-      font-size: 50px;
-    }
-    h2{
-      font-size: 25px;
-    }
-  }
-}
-#btn {
-    text-decoration: none;
-    background-color: #000000;
-    font-weight: lighter;
-    border-radius: 10px;
-    color:#EEEBDD ;
-    padding: 7px 15px;
-    display: inline-block;
-    margin: 15px;
-    box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.3);
-}
-#btn:hover {
-
-    background: #EEEBDD;
-    color: #000000;
-    transition: 0.3s;
-}
-.card-home {
+  .card-home {
     border: 1px solid #000000;
     border-radius: 10px;
     padding: 5px 20px;
     margin: 50px;
     box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.3);
+    i{
+      padding-top: 10px;
+      color: #000000;
+      font-size: 30px;
+    }
+    &:hover{
+      box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.7);
+      transition: 0.3s;
+    }
+  }
 }
-.card-home:hover {
-    box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.7);
-    transition: 0.3s;
-}
-.card-home i {
-    padding-top: 10px;
-    color: #000000;
-    font-size: 30px;
-}
-.iconos-redes {
+.container-redes-sociales-pages{
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+  .iconos-redes {
     list-style: none;
     display: inline-block;
-}
-.iconos-redes i {
-    font-size: 45px;
-    color: #000000;
-    padding: 0px 25px 35px 25px;
-}
-.iconos-redes i:hover {
-    color: #0000005b;
-    transition: 0.3s;
-}
-ul {
-    display: inline;
-    margin: 0px;
-    padding: 0px;
+    i{
+      font-size: 45px;
+      color: #000000;
+      padding: 0px 25px 35px 25px;
+      &:hover{
+        color: #0000005b;
+        transition: 0.3s;
+      }
+    }
+  }
 }
