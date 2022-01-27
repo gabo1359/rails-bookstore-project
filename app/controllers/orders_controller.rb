@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Order.all
+    # @orders = Order.includes(:book).select('books.title as title').where('orders.user_id = ?', current_user[:id])
+    @orders = Order.where('user_id = ?', current_user)
   end
     
   def new
