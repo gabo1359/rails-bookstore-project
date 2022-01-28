@@ -14,6 +14,11 @@
     top: 10px;
     right: 10px;
 }
+.btn-success-book:hover {
+    color: white;
+    background-color: green;
+
+}
 
 .btn-danger-book {
     color: red;
@@ -22,6 +27,11 @@
     position: absolute;
     top: 50px;
     right: 10px;
+}
+
+.btn-danger-book:hover {
+    color: white;
+    background-color: red;
 }
 
 .card {
@@ -61,4 +71,10 @@
 
 .title-section {
     font-size: 20px;
+}
+
+.price-book {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
 }
