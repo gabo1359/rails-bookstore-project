@@ -68,3 +68,5 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'simple_form'
 gem 'faker', '~> 2.19'
 gem 'pundit'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.16.0'

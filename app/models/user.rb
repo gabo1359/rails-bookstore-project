@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :books
   has_many :orders
+  has_one_attached :photo
 
   #para ubicacion de la persona
   geocoded_by :address

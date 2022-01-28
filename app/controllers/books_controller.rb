@@ -74,7 +74,8 @@ class BooksController < ApplicationController
         :released_year,
         :price,
         :category,
-        :user_id
+        :user_id,
+        :photo
         )
     end
 end
