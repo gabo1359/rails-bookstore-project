@@ -1,55 +1,50 @@
-ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-}
 .container-cuerpo {
     display: flex;
     justify-content:space-around;
-    align-items: center;
-    padding: 18px 100px;
-}
-.container-sobre {
-    text-align: center;
-}
-.container-info {
-    text-align: center;
-    padding: 20px 40px;
-    width: 600px;
-    border: 1px solid #000000;
-    border-radius: 10px;
-    padding: 5px 20px;
-    margin: 50px;
-    box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.3);
-}
-
-.btn-top a {
-    text-decoration: none;
-    background-color: #000000;
-    font-weight: lighter;
-    border-radius: 10px;
-    color:#EEEBDD ;
-    padding: 7px 15px;
-    display: inline-block;
-    margin: 15px;
-}
-.btn-botton a {
-    text-decoration: none;
-    background-color: #000000;
-    font-weight: lighter;
-    border-radius: 10px;
-    color:#EEEBDD ;
-    padding: 7px 15px;
-    display: inline-block;
-    margin: 15px;
-}
-.btn-botton a:hover {
-
-    background: #ffffff;
-    color: #000000;
-    transition: 0.3s;
-    border: 1px solid #000000;
+    .container-sobre {
+      text-align: center;
+      width: 38%;
+    }
+    .container-info {
+      align-self:flex-start;
+      padding: 20px 40px;
+      width: 600px;
+      border-radius: 10px;
+      padding: 5px 20px;
+      box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.3);
+      h4{
+        text-transform: uppercase;
+      }
+      .title-resenia{
+        color: #1E9BF0;
+        font-size: 26px;
+        margin: 0 0px 10px 0;
+        font-weight: 600;
+      }
+      .price-book{
+        margin-bottom: 10px;
+        span{
+          color: #333;
+          font-size: 1.15rem;
+          font-weight: 700;
+          line-height: 1.4rem;
+        }
+      }
+      .content-author{
+        display: flex;
+        align-items: center;
+        p:first-child{
+          background-image: asset-url("author.jpeg");
+          border-radius: 36px;
+          height: var(--dw-avatar-size, 36px);
+          width: var(--dw-avatar-size, 36px);
+          background-size: var(--dw-avatar-size, 36px);
+          margin-right: 10px;
+        }
+        p:nth-child(2) {
+          color:#666;
+          font-weight: 400;
+        }
+      }
+    }
 }

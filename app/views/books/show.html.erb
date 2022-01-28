@@ -1,36 +1,37 @@
+<div class="container-cuerpo">
+  <div class="container-sobre mt-4">
+    <%= image_tag "hp_book.png", alt: "foto libro", class: 'img-fluid'  %>
+  </div>
 
-<div class="btn-top">
-        <ul>
-            <li><%= link_to 'Back', books_path %></li>
-            <li><%= link_to 'Next', books_path %></li>
-        </ul>
+  <div class="container-info pt-5 pl-5 pr-4 pb-5 mt-4">
+    <h4><%= @book.title %></h4>
+    <div class="content-author">
+      <p></p>
+      <p><b>Autor:</b> <%= @book.author %></p>
     </div>
-    <hr>
-    <div class="container-cuerpo">
-        <div class="container-sobre">
-            <img src="../../../../el_alquimista.jpg" alt="imagen de libro,El Alquimista">
-        </div>
-        <div class="container-info">
-            <h1>EL ALQUIMISTA</h1>
-            <h2>Autor: Paulo Coelho</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolorem, maxime sint aut quis perspiciatis impedit architecto blanditiis enim doloribus libero facilis, natus, adipisci id fugiat vitae odio quidem distinctio.</p>
-            <div class="btn-botton">
-                <ul>
-                    <li><%= link_to 'Edit', edit_book_path(@book) %></li>
-                    <li><%= link_to 'Reservar' , new_order_path(:book_id => @book, :title => @book.title, :author => @book.author) %></li>
-                </ul>
-            </div>
-        </div>
+    <p class="title-resenia">Reseña del libro</p>
+    <p><%= @book.description %></p>
+    <div class="price-book">
+      <span>S/ <%= @book.price %></span>
     </div>
-<h2><%= @book.title %></h2>
-<p><%= @book.description %></p>
-<p><%= @book.price %></p>
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
-<br>
-
-<%= link_to 'Reservar' , new_order_path(:book_id => @book, :title => @book.title) %>
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="">
+      <%= link_to 'RESERVAR' , new_order_path(:book_id => @book, :title => @book.title, :author => @book.author), class: 'btn btn-success' %>
+      <% if policy(@book).update? %>
+        <%= link_to '📝', edit_book_path(@book) %>
+      <% end %>
+      <% if policy(@book).destroy? %>
+        <%= link_to '🗑️', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h3 class="text-center mt-3">Dirección:</h3>
+  <div class="row justify-content-md-center">
+    <div id="map"
+        style="width: 50%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>
