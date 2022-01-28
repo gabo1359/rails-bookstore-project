@@ -53,6 +53,7 @@ class BooksController < ApplicationController
     if @book.present?
       @book.destroy
     end
+    redirect_to books_path
   end
 
   private

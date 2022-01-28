@@ -1,39 +1,46 @@
-<div class="container">
+<h1 class='book-h1'>¡Reserva un libro ahora!</h1>
+<div class="book-container">
 <% if policy(Book).create? %>
   <div class="text-right">
-    <%= link_to 'Nuevo Libro', new_book_path, class: 'btn btn-outline-primary mb-2' %>
+    <%= link_to 'Agrega un libro', new_book_path, class: 'btn btn-outline-primary mb-2' %>
   </div>
 <% end %>
 <div class="auto-grid">
   <% @books.each do |book| %>
 
     <div class="card" style="box-shadow: 1px 2px 4px rgb(0 0 0 / 10%)">
-      <%= image_tag "libro.jpg", alt: "foto libro", class: 'card-img-top'  %>
+      <%= link_to book_path(book) do %>
+        <%= image_tag "libro.jpg", alt: "foto libro", class: 'card-img-top'  %>
+      <% end %>
       <div class="card-body card-book">
-        <p class="title-section">
-          <% if policy(book).show? %>
-            <%= link_to "#{book.title }", book_path(book), class: '' %>
-          <% end %>
+        <p class="title-section text-center">
+          <%= book.title %>
         </p>
         <div class="author-book">
           <div class="author-book-label">
             <div>Autor:</div><p></p>
           </div>
-          <p><%= book.author %></p>
+          <div class='author-name'><%= book.author %></div>
         </div>
 
+               
         <div class="price-book">
-          <span>S/ 56.00</span>
+          <p>Precio:  <strong>S/. <%= book.price %> </strong>/ día</p>
         </div>
-        <div class="text-right">
+        <div class="text-left below">
           <% if policy(book).update? %>
-            <%= link_to '📝', edit_book_path(book) %>
-          <% end %>
+            <%= link_to 'Editar', edit_book_path(book), class: 'btn btn-success' %>
+           <% end %>
           <% if policy(book).destroy? %>
-            <%= link_to '🗑️', book_path(book), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%# <%= link_to '🗑️', book_path(book), method: :delete, data: { confirm: '¿Estás seguro?' } %>
+            <%= button_to "Eliminar", {:controller => :books,
+                :action => 'destroy', :id => book.id }, :method => :delete,
+                 class: 'btn btn-danger' %>
           <% end %>
         </div>
-
+        <% if current_user.id != book.user_id %>
+           <%= link_to 'Reservar', book_path(book), class: 'btn btn-light reservar' %>
+        <% end %>
       </div>
     </div>
   <% end %>

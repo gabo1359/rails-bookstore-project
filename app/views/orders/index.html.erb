@@ -23,7 +23,7 @@
         <% end %>
         <td><%= order.book.title %></td>
         <td><%= order.book.author %></td>
-        <td> S/. <%= order.book.price  %> </td>
+        <td> S/. <%= (order.end_date - order.start_date).to_i * order.book.price %> </td>
         <td><%= order.start_date.strftime('%d-%m-%Y') %></td>
         <td><%= order.end_date.strftime('%d-%m-%Y') %></td>
       </tr>
