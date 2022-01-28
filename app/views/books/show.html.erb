@@ -4,7 +4,7 @@
   </div>
 
   <div class="container-info pt-5 pl-5 pr-4 pb-5 mt-4">
-    <h4><%= @book.title %></h4>
+    <h4 class='h4-show'><%= @book.title %></h4>
     <div class="content-author">
       <p></p>
       <p><b>Autor:</b> <%= @book.author %></p>
@@ -12,7 +12,7 @@
     <p class="title-resenia">Reseña del libro</p>
     <p><%= @book.description %></p>
     <div class="price-book">
-      <span>S/ <%= @book.price %></span>
+      <span>Precio: S/ <%= @book.price %> / día</span>
     </div>
     <div class="">
       <%= link_to 'RESERVAR' , new_order_path(:book_id => @book, :title => @book.title, :author => @book.author), class: 'btn btn-success', style: '' %>
@@ -20,13 +20,13 @@
         <%= link_to '📝', edit_book_path(@book) %>
       <% end %>
       <% if policy(@book).destroy? %>
-        <%= link_to '🗑️', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to '🗑️', book_path(@book), method: :delete, data: { confirm: '¿Estás seguro?' } %>
       <% end %>
     </div>
   </div>
 </div>
-<div class="container">
-  <h3 class="text-center mt-3">Dirección:</h3>
+<div class="container-map">
+  <h3 class="text-center mt-3">¡Aquí lo puedes recoger!</h3>
   <div class="row justify-content-md-center">
     <div id="map"
         style="width: 50%; height: 600px;"

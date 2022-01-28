@@ -1,4 +1,5 @@
 .container-cuerpo {
+    margin: 50px 0px;;
     display: flex;
     justify-content:space-around;
     .container-sobre {
@@ -14,6 +15,7 @@
       box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.3);
       h4{
         text-transform: uppercase;
+        text-align: center;
       }
       .title-resenia{
         color: #1E9BF0;
@@ -47,4 +49,7 @@
         }
       }
     }
+}
+.container-map {
+  margin-bottom: 50px;;
 }
