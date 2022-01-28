@@ -1,0 +1,47 @@
+<h1 class='book-h1'>¡Reserva un libro ahora!</h1>
+<div class="book-container">
+<% if policy(Book).create? %>
+  <div class="text-right">
+    <%= link_to 'Agrega un libro', new_book_path, class: 'btn btn-outline-primary mb-2' %>
+  </div>
+<% end %>
+<div class="auto-grid">
+  <% @books.each do |book| %>
+
+    <div class="card" style="box-shadow: 1px 2px 4px rgb(0 0 0 / 10%)">
+      <%= link_to book_path(book) do %>
+        <%= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill, class: 'img-thumbnail card-img-top'%>
+      <% end %>
+      <div class="card-body card-book">
+        <p class="title-section text-center">
+          <%= book.title %>
+        </p>
+        <div class="author-book">
+          <div class="author-book-label">
+            <div>Autor:</div><p></p>
+          </div>
+          <div class='author-name'><%= book.author %></div>
+        </div>
+
+
+        <div class="price-book">
+          <p>Precio:  <strong>S/. <%= book.price %> </strong>/ día</p>
+        </div>
+        <div class="text-left below">
+          <% if policy(book).update? %>
+            <%= link_to 'Editar', edit_book_path(book), class: 'btn btn-success-book' %>
+           <% end %>
+          <% if policy(book).destroy? %>
+            <%# <%= link_to '🗑️', book_path(book), method: :delete, data: { confirm: '¿Estás seguro?' } %>
+            <%= button_to "Eliminar", {:controller => :books,
+                :action => 'destroy', :id => book.id }, :method => :delete,
+                 class: 'btn btn-danger-book' %>
+          <% end %>
+        </div>
+        <% if current_user.id != book.user_id %>
+           <%= link_to 'Reservar', book_path(book), class: 'btn btn-light reservar' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

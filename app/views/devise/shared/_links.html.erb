@@ -1,13 +1,19 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
-<% end %>
-
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+  <div class="text-center mt-2">
+    ¿Ya tienes cuenta?
+    <%= link_to " Inicia sesión aquí", new_session_path(resource_name) %><br />
+  </div>
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+  <div class="text-center mt-2">
+    <%= link_to "¿Olvidaste tu contraseña?", new_password_path(resource_name) %><br />
+  </div>
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <p class="text-center mt-3">¿Aún no tienes cuenta en <b>Chihuan's Library</b>?</p>
+  <%= link_to "Regístrate", new_registration_path(resource_name), class: 'btn btn-outline-primary btn-block' %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

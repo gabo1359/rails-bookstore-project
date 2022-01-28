@@ -1,0 +1,18 @@
+<h1 class='order-h1'><%= params[:title].upcase %></h1>
+
+<%# This comes from books#show %>
+<h2 class='order-h2'><%= '¡Resérvalo ahora!' %></h2> 
+
+<div class='order-card'>
+  <%= image_tag("book1.png", width: 400, class:"order-img") %>
+  
+  <div class='order-form'> 
+    <%= simple_form_for(@order) do |f| %>
+      <%= f.input :start_date, label: 'Inicio de reserva:' %>
+      <%= f.input :end_date, label: 'Fin de reserva:' %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :book_id, value: params[:book_id] %>
+      <%= f.submit 'Reservar', class:'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

@@ -1,1 +1,93 @@
 // Specific CSS for your home-page
+body{
+  background-color: lightgray;
+}
+.barra-superior {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), asset-url("Landingpage_img");
+    background-position:center;
+    background-size: cover;
+    height: 400px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .container-home {
+
+      width: 800px;
+      margin: 0px auto;
+      h1, h2{
+        color: #EEEBDD;
+      }
+      h1{
+        font-size: 50px;
+      }
+      h2{
+        font-size: 20px;
+      }
+      a{
+          text-decoration: none;
+          background-color: #000000;
+          font-weight: lighter;
+          border-radius: 10px;
+          color:#EEEBDD ;
+          padding: 7px 15px;
+          display: inline-block;
+          margin: 15px;
+          box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.3);
+          &:hover{
+            background: #EEEBDD;
+            color: #000000;
+            transition: 0.5s;
+          }
+      }
+    }
+}
+.container-cards-home {
+  display: flex;
+  width: 1000px;
+  margin: 0px auto;
+  .card-home {
+    width: 300px;
+    height: 400px;
+    margin-top: 20px;
+    border: lightgray;
+    background-color: #a8dadc;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 50px;
+    box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.3);
+    h2 {
+      text-align: center;
+    }
+    p {
+      text-align: justify;
+    }
+    i{
+      padding-top: 10px;
+      color: #005f73;
+      font-size: 30px;
+    }
+    &:hover{
+      box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.7);
+      transform: translateY(-3%);
+    }
+  }
+}
+.container-redes-sociales-pages{
+  display: inline;
+  margin: 0px;
+  padding: 0px;
+  .iconos-redes {
+    list-style: none;
+    display: inline-block;
+    i{
+      font-size: 45px;
+      color: #005f73;
+      padding: 0px 25px 35px 25px;
+      &:hover{
+        color: #0000005b;
+        transform: translateY(-3%);
+      }
+    }
+  }
+}

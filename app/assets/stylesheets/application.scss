@@ -14,3 +14,16 @@
 @import "pages/index";
 
 @import "bootstrap/scss/bootstrap";
+@import "./pages/home";
+
+//mapas
+@import "mapbox-gl/dist/mapbox-gl";
+@import './orders/new';
+@import './orders/index';
+@import './books/new';
+@import './books/index';
+
+.container-form-devise {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}

@@ -1,0 +1,65 @@
+.container-cuerpo {
+    margin: 50px 0px;;
+    display: flex;
+    justify-content:space-around;
+   
+    .container-sobre {
+      text-align: center;
+      width: 38%;
+      
+    }
+    .container-info {
+      background-color: white;
+      position: relative;
+      align-self:flex-start;
+      padding: 20px 40px;
+      width: 600px;
+      border-radius: 10px;
+      padding: 5px 20px;
+      box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.3);
+      .reseña {
+        text-align: justify;
+      }
+      h4{
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .title-resenia{
+        color: #1E9BF0;
+        font-size: 26px;
+        margin: 0 0px 10px 0;
+        font-weight: 600;
+      }
+      .price-book-show{
+        margin-bottom: 10px;
+        position: absolute;
+        right: 30px;
+        bottom: 20px;
+        span{
+          color: #333;
+          font-size: 1.15rem;
+          font-weight: 700;
+          line-height: 1.4rem;
+        }
+      }
+      .content-author{
+        display: flex;
+        align-items: center;
+        p:first-child{
+          background-image: asset-url("author.jpeg");
+          border-radius: 36px;
+          height: var(--dw-avatar-size, 36px);
+          width: var(--dw-avatar-size, 36px);
+          background-size: var(--dw-avatar-size, 36px);
+          margin-right: 10px;
+        }
+        p:nth-child(2) {
+          color:#666;
+          font-weight: 400;
+        }
+      }
+    }
+}
+.container-map {
+  margin-bottom: 50px;;
+}

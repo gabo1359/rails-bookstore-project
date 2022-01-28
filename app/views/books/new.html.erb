@@ -1,0 +1,6 @@
+<h1 class='book-h1'>Agrega un nuevo libro</h1>
+<br>
+<%= link_to 'Regresar', books_path, class: 'book-back' %>
+<div class='book-form'>
+  <%= render 'form', book: @book %>
+</div>
