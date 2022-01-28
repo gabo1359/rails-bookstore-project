@@ -3,19 +3,8 @@ class BooksController < ApplicationController
 
   def index
     if params[:query].present?
-      @books = policy_scope(Book).where
-      ("title ILIKE ? OR
-        category ILIKE ? OR
-        author ILIKE ? OR
-        description ILIKE ? OR
-        released_year ILIKE ? OR
-        price ILIKE ?",
-          "%#{params[:query]}%",
-          "%#{params[:query]}%",
-          "%#{params[:query]}%",
-          "%#{params[:query]}%",
-          "%#{params[:query]}%",
-          "%#{params[:query]}%")
+      @books = policy_scope(Book).where("title ILIKE ?  OR author ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+
     else
     @books = policy_scope(Book).order(created_at: :desc)
     end

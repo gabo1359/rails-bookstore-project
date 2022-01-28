@@ -1,4 +1,7 @@
 // Specific CSS for your home-page
+body{
+  background-color: lightgray;
+}
 .barra-superior {
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), asset-url("Landingpage_img");
     background-position:center;
@@ -9,6 +12,7 @@
     align-items: center;
     justify-content: center;
     .container-home {
+
       width: 800px;
       margin: 0px auto;
       h1, h2{
@@ -18,7 +22,7 @@
         font-size: 50px;
       }
       h2{
-        font-size: 25px;
+        font-size: 20px;
       }
       a{
           text-decoration: none;
@@ -33,7 +37,7 @@
           &:hover{
             background: #EEEBDD;
             color: #000000;
-            transition: 0.3s;
+            transition: 0.5s;
           }
       }
     }
@@ -43,19 +47,23 @@
   width: 1000px;
   margin: 0px auto;
   .card-home {
-    border: 1px solid #000000;
+    width: 300px;
+    height: 400px;
+    margin-top: 20px;
+    border: lightgray;
+    background-color: #a8dadc;
     border-radius: 10px;
     padding: 5px 20px;
     margin: 50px;
     box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.3);
     i{
       padding-top: 10px;
-      color: #000000;
+      color: #005f73;
       font-size: 30px;
     }
     &:hover{
       box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.7);
-      transition: 0.3s;
+      transform: translateY(-3%);
     }
   }
 }
@@ -68,11 +76,11 @@
     display: inline-block;
     i{
       font-size: 45px;
-      color: #000000;
+      color: #005f73;
       padding: 0px 25px 35px 25px;
       &:hover{
         color: #0000005b;
-        transition: 0.3s;
+        transform: translateY(-3%);
       }
     }
   }
