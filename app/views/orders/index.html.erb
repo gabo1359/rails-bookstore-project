@@ -1,25 +1,33 @@
-<h1 class='order-h1'>Mis órdenes</h1>
-
-<table class="order-table table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Nº</th>
-      <th scope="col">Libro</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Inicio de reserva</th>
-      <th scope="col">Fin de reserva</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    <% @orders.each_with_index do |order, index| %>
-    <tr>
-      <th scope="row"><%= index + 1 %></th>
-      <td><%= order.book.title %></td>
-      <td> <%= order.book.price  %> </td>
-      <td><%= order.start_date %></td>
-      <td><%= order.end_date %></td>
-    </tr>
-   <% end %>
-  </tbody>
-</table>
+<h1 class='order-h1'><%= current_user.admin == true ? 'Lista de órdenes' : 'Mis órdenes' %></h1>
+<div class=order-container>
+  <table class="order-table table">
+    <thead class="thead-dark text-center">
+      <tr>
+        <th scope="col">Nº</th>
+        <% if current_user.admin == true %>
+          <th scope="col">Usuario</th>
+        <% end %>
+        <th scope="col">Libro</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Inicio de reserva</th>
+        <th scope="col">Fin de reserva</th>
+      </tr>
+    </thead>
+    <tbody class='text-center'>
+      <% @orders.each_with_index do |order, index| %>
+      <tr>
+        <th scope="row"><%= index + 1 %></th>
+        <% if current_user.admin == true %>
+          <td><%= order.user.email %></td>
+        <% end %>
+        <td><%= order.book.title %></td>
+        <td><%= order.book.author %></td>
+        <td> S/. <%= (order.end_date - order.start_date).to_i * order.book.price %> </td>
+        <td><%= order.start_date.strftime('%d-%m-%Y') %></td>
+        <td><%= order.end_date.strftime('%d-%m-%Y') %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

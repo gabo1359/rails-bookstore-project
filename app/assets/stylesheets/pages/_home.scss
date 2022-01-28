@@ -53,9 +53,15 @@ body{
     border: lightgray;
     background-color: #a8dadc;
     border-radius: 10px;
-    padding: 5px 20px;
+    padding: 10px 20px;
     margin: 50px;
     box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.3);
+    h2 {
+      text-align: center;
+    }
+    p {
+      text-align: justify;
+    }
     i{
       padding-top: 10px;
       color: #005f73;

@@ -6,17 +6,21 @@
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
             <%= f.input :email,
+                        label: 'Correo electrónico:',
                         required: false,
                         autofocus: true,
                         input_html: { autocomplete: "email" } %>
             <%= f.input :password,
+                        label: 'Contraseña:',
                         required: false,
                         input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            <%= f.input :remember_me, 
+                        label: 'Recordar sesión',
+                        as: :boolean if devise_mapping.rememberable? %>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Inicia Sesión", class: 'btn btn-primary btn-block' %>
+            <%= f.button :submit, "Iniciar sesión", class: 'btn btn-primary btn-block' %>
           </div>
         <% end %>
         <!--links de registrarse y si nos olvidaste de contraseña-->
