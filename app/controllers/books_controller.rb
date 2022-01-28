@@ -6,12 +6,13 @@ class BooksController < ApplicationController
   end
 
   def show
-    @latitude_and_longitude = User.geocoded
-    @markers = @latitude_and_longitude.geocoded.map do |flat|
+    #@latitude_and_longitude = User.geocoded
+    @latitude_and_longitude = User.near(current_user.address, 10)
+    @markers = @latitude_and_longitude.geocoded.map do |user|
       {
-        lat: flat.latitude,
-        lng: flat.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { flat: flat })
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user })
       }
     end
     authorize @book
