@@ -23,19 +23,19 @@
           <div class='author-name'><%= book.author %></div>
         </div>
 
-               
+
         <div class="price-book">
           <p>Precio:  <strong>S/. <%= book.price %> </strong>/ día</p>
         </div>
         <div class="text-left below">
           <% if policy(book).update? %>
-            <%= link_to 'Editar', edit_book_path(book), class: 'btn btn-success' %>
+            <%= link_to 'Editar', edit_book_path(book), class: 'btn btn-success-book' %>
            <% end %>
           <% if policy(book).destroy? %>
             <%# <%= link_to '🗑️', book_path(book), method: :delete, data: { confirm: '¿Estás seguro?' } %>
             <%= button_to "Eliminar", {:controller => :books,
                 :action => 'destroy', :id => book.id }, :method => :delete,
-                 class: 'btn btn-danger' %>
+                 class: 'btn btn-danger-book' %>
           <% end %>
         </div>
         <% if current_user.id != book.user_id %>

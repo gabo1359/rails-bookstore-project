@@ -15,7 +15,7 @@
       <span>S/ <%= @book.price %></span>
     </div>
     <div class="">
-      <%= link_to 'RESERVAR' , new_order_path(:book_id => @book, :title => @book.title, :author => @book.author), class: 'btn btn-success' %>
+      <%= link_to 'RESERVAR' , new_order_path(:book_id => @book, :title => @book.title, :author => @book.author), class: 'btn btn-success', style: '' %>
       <% if policy(@book).update? %>
         <%= link_to '📝', edit_book_path(@book) %>
       <% end %>

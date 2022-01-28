@@ -2,11 +2,11 @@
     margin: 50px 100px;
 }
 
-.btn {
+.btn-book {
     margin: 3px;
 }
 
-.btn-success {
+.btn-success-book {
     color: green;
     background-color: white;
     border: none;
@@ -15,7 +15,7 @@
     right: 10px;
 }
 
-.btn-danger {
+.btn-danger-book {
     color: red;
     background-color: white;
     border: none;
@@ -57,11 +57,6 @@
 .author-name {
     font-size: 16px;
     padding-left: 10px;
-}
-
-.price-book {
-    position: absolute;
-    right: 15px;
 }
 
 .title-section {
