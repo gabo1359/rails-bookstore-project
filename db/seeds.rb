@@ -17,8 +17,8 @@ book = Book.create(
   author: Faker::Book.author,
   description: Faker::Books::Dune.quote,
   released_year: prng.rand(1990..2021),
- price: prng.rand(10..30),
+  price: prng.rand(10..30),
   category: Faker::Book.genre,
   status: 0,
-   user_id:user.id)
+  user_id: 1)
  end

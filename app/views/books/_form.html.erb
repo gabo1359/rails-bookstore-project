@@ -1,14 +1,15 @@
 <%= simple_form_for(book) do |f| %>
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :author %>
-    <%= f.input :description %>
-    <%= f.input :released_year %>
-    <%= f.input :price %>
-    <%= f.input :category %>
+    <%= f.input :title, label: 'Título:' %>
+    <%= f.input :author, label: 'Autor:' %>
+    <%= f.input :description, label: 'Descripción:' %>
+    <%= f.input :released_year, label: 'Año de publicación:' %>
+    <%= f.input :price, label: 'Precio:' %>
+    <%= f.input :category, label: 'Categoría:',
+                 :collection => %w[Autobiográfico Autoayuda Ciencia-ficción Científico Novela Suspenso Otro] %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= f.submit 'Agregar libro', class: 'btn btn-primary' %>
   </div>
 <% end %>

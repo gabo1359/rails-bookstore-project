@@ -20,8 +20,14 @@
 @import "mapbox-gl/dist/mapbox-gl";
 @import './orders/new';
 @import './orders/index';
+@import './books/new';
 
 .alert, .notice {
     margin: 0px;
     padding: 0px;
+}
+
+.container-form-devise {
+    margin-top: 25px;
+    margin-bottom: 25px;
 }

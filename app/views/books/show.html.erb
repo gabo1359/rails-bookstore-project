@@ -17,7 +17,7 @@
             <div class="btn-botton">
                 <ul>
                     <li><%= link_to 'Edit', edit_book_path(@book) %></li>
-                    <li><%= link_to 'Reservar' , new_order_path(:book_id => @book) %></li>
+                    <li><%= link_to 'Reservar' , new_order_path(:book_id => @book, :title => @book.title, :author => @book.author) %></li>
                 </ul>
             </div>
         </div>

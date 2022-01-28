@@ -2,23 +2,26 @@
   <div class="row justify-content-center">
     <div class="card container-form-devise">
       <div class="card-body">
-        <h2 class="text-center">Crear Cuenta</h2>
+        <h2 class="text-center">Regístrate</h2>
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
 
             <div class="form-inputs">
-              <%= f.input :first_name %>
-              <%= f.input :last_name %>
-              <%= f.input :address %>
+              <%= f.input :first_name, label: 'Nombre(s):' %>
+              <%= f.input :last_name, label: 'Apellidos:' %>
+              <%= f.input :address, label: 'Dirección:' %>
               <%= f.input :email,
+                          label: 'Correo electrónico:',
                           required: true,
                           autofocus: true,
                           input_html: { autocomplete: "email" }%>
               <%= f.input :password,
+                          label: 'Contraseña:',
                           required: true,
-                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                          hint: ("#{@minimum_password_length} caracteres mínimo" if @minimum_password_length),
                           input_html: { autocomplete: "new-password" } %>
               <%= f.input :password_confirmation,
+                          label: 'Repetir contraseña',
                           required: true,
                           input_html: { autocomplete: "new-password" } %>
             </div>

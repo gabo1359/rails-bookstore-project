@@ -34,9 +34,11 @@ class BooksController < ApplicationController
   end
 
   def edit
+    authorize @book
   end
 
   def update
+    authorize @book
     if @book.update(book_params)
     redirect_to book_path(@book)
     else
