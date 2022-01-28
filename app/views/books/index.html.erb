@@ -10,7 +10,7 @@
 
     <div class="card" style="box-shadow: 1px 2px 4px rgb(0 0 0 / 10%)">
       <%= link_to book_path(book) do %>
-        <%= image_tag "libro.jpg", alt: "foto libro", class: 'card-img-top'  %>
+        <%= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill, class: 'img-thumbnail card-img-top'%>
       <% end %>
       <div class="card-body card-book">
         <p class="title-section text-center">
